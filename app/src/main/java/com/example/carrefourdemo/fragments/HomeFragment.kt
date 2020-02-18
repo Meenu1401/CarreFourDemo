@@ -29,7 +29,7 @@ class HomeFragment : BaseFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        CarreFourApp.instance.applicationInjector()?.injectHome(this)
+        CarreFourApp.instance.applicationInjector().injectHome(this)
         observeData()
         return inflater.inflate(R.layout.fragment_home, container, false)
     }

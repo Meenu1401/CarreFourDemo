@@ -1,7 +1,6 @@
 package com.example.carrefourdemo
 
 
-import android.content.Context
 import androidx.lifecycle.LifecycleObserver
 import com.example.urltestapp.di.AppComponent
 import com.example.urltestapp.di.DaggerAppComponent
@@ -10,13 +9,14 @@ import dagger.android.support.DaggerApplication
 
 class CarreFourApp : DaggerApplication(), LifecycleObserver {
 
-    private var androidInjector: AppComponent? = null
+    private lateinit var androidInjector: AppComponent
+
     init {
         instance = this
 
     }
 
-    public override fun applicationInjector(): AppComponent? {
+    public override fun applicationInjector(): AppComponent {
         return androidInjector
     }
 
@@ -27,13 +27,7 @@ class CarreFourApp : DaggerApplication(), LifecycleObserver {
     }
 
 
-
     companion object {
         lateinit var instance: CarreFourApp
-
-
-
-        val appContext: Context
-            get() = instance.applicationContext
     }
 }

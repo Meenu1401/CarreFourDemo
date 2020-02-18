@@ -29,7 +29,7 @@ class ReposListFragment : BaseFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         user = arguments!!.getString("login")
-        CarreFourApp.instance.applicationInjector()?.inject(this)
+        CarreFourApp.instance.applicationInjector().inject(this)
         observeRepoList()
 
     }
